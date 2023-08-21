@@ -2,7 +2,6 @@ package com.liberato.projetogithub;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class DadosCadastro {
     String nome;
     String email;
@@ -59,3 +58,6 @@ public class DadosCadastro {
         DadosCadastro.lista = lista;
     }
 }
+
+
+

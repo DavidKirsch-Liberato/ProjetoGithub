@@ -283,6 +283,7 @@ public class Cadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btConsultarActionPerformed
 
+    
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
         String pesquisa;
         boolean achei = false;
@@ -307,8 +308,7 @@ public class Cadastro extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btExcluirActionPerformed
-
-    
+  
     private void telefoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefoneKeyReleased
         
     }//GEN-LAST:event_telefoneKeyReleased
