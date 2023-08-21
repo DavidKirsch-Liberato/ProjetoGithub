@@ -1,23 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package TrabalhoGithub;
-
+package com.liberato.projetogithub;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author 22100023
- */
+
 public class DadosCadastro {
-    private String nome;
-    private String email;
-    private String endereco;
-    private String cidade;
-    private String telefone;
+    String nome;
+    String email;
+    String endereco;
+    String cidade;
+    String telefone;
     public static List<DadosCadastro> lista = new ArrayList();
 
     public String getNome() {

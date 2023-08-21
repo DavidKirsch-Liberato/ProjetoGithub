@@ -3,20 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TrabalhoGithub;
+package com.liberato.projetogithub;
 
 import javax.swing.JOptionPane;
+import javax.swing.text.MaskFormatter;
 
 /**
  *
  * @author 22100023
  */
-public class Cadastro1 extends javax.swing.JFrame {
+public class Cadastro extends javax.swing.JFrame {
 
     /**
      * Creates new form CadEmail
      */
-    public Cadastro1() {
+    public Cadastro() {
         initComponents();
     }
 
@@ -75,6 +76,11 @@ public class Cadastro1 extends javax.swing.JFrame {
         cidade.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         telefone.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        telefone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                telefoneKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -211,18 +217,25 @@ public class Cadastro1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicionarActionPerformed
+        
+        String telefone2 = telefone.getText();
+        telefone2 = telefone2.replaceAll("[().-]", "").replace(" ", "");
         if (nome.getText().isEmpty() || email.getText().isEmpty()|| endereco.getText().isEmpty() || cidade.getText().isEmpty() || telefone.getText().isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, " Preencha todos os campos!", "Inclusão", JOptionPane.ERROR_MESSAGE);
         } else {
             if (!email.getText().contains("@") || !email.getText().contains(".") || email.getText().contains(" ")) {
-                JOptionPane.showMessageDialog(rootPane, " Email inválido!", "Inclusão", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Email inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
+            } else if (!telefone2.matches("^[0-9]*$") || telefone2.length() != 11 ) {
+                JOptionPane.showMessageDialog(rootPane, "Telefone inválido!", "Erro", JOptionPane.ERROR_MESSAGE);            
             } else {
                 DadosCadastro novo = new DadosCadastro();
                 novo.setNome(nome.getText());
                 novo.setEmail(email.getText());
                 novo.setEndereco(endereco.getText());
                 novo.setCidade(cidade.getText());
-                novo.setTelefone(telefone.getText());
+                novo.setTelefone(telefone2.format("(%s) %s-%s-%s", telefone2.substring(0, 2), 
+                        telefone2.substring(2, 5), 
+          telefone2.substring(5, 8), telefone2.substring(8, 11)));
                 DadosCadastro.lista.add(novo);
                 JOptionPane.showMessageDialog(rootPane, nome.getText() + " Adicionado com sucesso!", "Inclusão", JOptionPane.INFORMATION_MESSAGE);
                 nome.setText(null);
@@ -295,6 +308,11 @@ public class Cadastro1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btExcluirActionPerformed
 
+    
+    private void telefoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefoneKeyReleased
+        
+    }//GEN-LAST:event_telefoneKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -304,6 +322,7 @@ public class Cadastro1 extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -313,19 +332,19 @@ public class Cadastro1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cadastro1.class
+            java.util.logging.Logger.getLogger(Cadastro.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cadastro1.class
+            java.util.logging.Logger.getLogger(Cadastro.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cadastro1.class
+            java.util.logging.Logger.getLogger(Cadastro.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Cadastro1.class
+            java.util.logging.Logger.getLogger(Cadastro.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -336,7 +355,7 @@ public class Cadastro1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cadastro1().setVisible(true);
+                new Cadastro().setVisible(true);
             }
         });
     }
