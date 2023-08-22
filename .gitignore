@@ -1,6 +1,2 @@
-
-.vs/ProjetoGithub/FileContentIndex/a89dcd96-844e-4255-8c72-2d7bd44488d5.vsidx
-.vs/ProjetoGithub/FileContentIndex/read.lock
-.vs/ProjetoGithub/v17/.suo
-.vs/slnx.sqlite
-.vs/VSWorkspaceState.json
+.vs/
+target/classes/com/liberato
