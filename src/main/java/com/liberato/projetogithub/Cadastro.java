@@ -216,6 +216,7 @@ public class Cadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void btAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicionarActionPerformed
         
         String telefone2 = telefone.getText();
@@ -247,6 +248,7 @@ public class Cadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btAdicionarActionPerformed
 
+    
     private void btSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSairMouseClicked
         System.exit(0);
     }//GEN-LAST:event_btSairMouseClicked

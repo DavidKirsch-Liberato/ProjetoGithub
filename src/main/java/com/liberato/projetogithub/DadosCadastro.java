@@ -10,6 +10,7 @@ public class DadosCadastro {
     String telefone;
     public static List<DadosCadastro> lista = new ArrayList();
 
+    
     public String getNome() {
         return nome;
     }
