@@ -216,6 +216,7 @@ public class Cadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void btAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAdicionarActionPerformed
         
         String telefone2 = telefone.getText();
@@ -247,6 +248,7 @@ public class Cadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btAdicionarActionPerformed
 
+    
     private void btSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSairMouseClicked
         System.exit(0);
     }//GEN-LAST:event_btSairMouseClicked
@@ -283,6 +285,7 @@ public class Cadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btConsultarActionPerformed
 
+    
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
         String pesquisa;
         boolean achei = false;
@@ -307,8 +310,7 @@ public class Cadastro extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btExcluirActionPerformed
-
-    
+  
     private void telefoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefoneKeyReleased
         
     }//GEN-LAST:event_telefoneKeyReleased
