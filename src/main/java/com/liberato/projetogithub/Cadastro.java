@@ -249,7 +249,7 @@ public class Cadastro extends javax.swing.JFrame {
             if (!email.getText().contains("@") || !email.getText().contains(".") || email.getText().contains(" ")) {
                 JOptionPane.showMessageDialog(rootPane, "Email inválido!", "Erro", JOptionPane.ERROR_MESSAGE);
             } else if (!telefone2.matches("^[0-9]*$") || telefone2.length() != 11 ) {
-                JOptionPane.showMessageDialog(rootPane, "Telefone inválido!", "Erro", JOptionPane.ERROR_MESSAGE);            
+                JOptionPane.showMessageDialog(rootPane, "Telefone inválido! Digite novamente!", "Erro", JOptionPane.ERROR_MESSAGE);            
             } else {
                 DadosCadastro novo = new DadosCadastro();
                 novo.setNome(nome.getText());
@@ -286,7 +286,7 @@ public class Cadastro extends javax.swing.JFrame {
     private void btConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarActionPerformed
         String pesquisa;
         boolean achei = false;
-        pesquisa = JOptionPane.showInputDialog(rootPane, "Nome para consultar:", "Consultar", JOptionPane.QUESTION_MESSAGE);
+        pesquisa = JOptionPane.showInputDialog(rootPane, "Nome a ser consultado:", "Consultar", JOptionPane.QUESTION_MESSAGE);
         if (pesquisa.isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, " Preencha o nome para consultar!", "Consultar", JOptionPane.ERROR_MESSAGE);
         } else {
